@@ -1,18 +1,113 @@
 .game {
     width: 400px;
-    height: 700px;
+    height: 100vh;
+
+    display: flex;
+    position: relative;
+
     background-color: #041b52;
+    background-image: url(../images/space.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     margin: auto;
 }
 
-.player {
+.blockControlLeft {
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    /* background-color: #ff0000; */
+}
+
+.blockControlRight {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    /* background-color: #000000; */
+}
+
+.playerRight {
+    width: 50%;
+    height: 50px;
+    /* background-color: rgb(85, 137, 103); */
+    margin-left: auto;
+    position: relative;
+    margin-top: calc(100vh - 200px);
+}
+
+.playerRight::after {
+    content: '';
+    display: block;
+    position: absolute;
+    
     width: 300px;
     height: 300px;
-    background-color: rgb(85, 137, 103);
+    top: -110px;
+    right: 20%;
+
     background-image: url(../images/astronaut-right.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin: auto;
-    margin-top: 100%;
+}
+
+.playerLeft {
+    composes: playerRight;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.playerLeft::after {
+    content: '';
+    display: block;
+    position: absolute;
+    
+    width: 300px;
+    height: 300px;
+    top: -110px;
+    left: 20%;
+
+    background-image: url(../images/astronaut-left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.star {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 7px 7px rgba(252, 255, 57, 0.429);
+    /* background-color: rgb(85, 137, 103); */
+    background-image: url(../images/star.png);
+    background-size: 80px 80px;
+    background-position: center;
+
+    position: absolute;
+    left: 75%;
+    top: -50px;
+
+    animation: fallingStar 5s linear infinite;
+}
+
+@keyframes fallingStar {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.starLeft {
+    composes: star;
+    left: 15%;
 }

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { GameScreen } from "../src/components/GameScreen";
+import HomePage from "./HomePage/HomePage";
+// import { GameScreen } from "../src/components/GameScreen";
 
 export default function Home() {
   return (
@@ -10,7 +11,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <GameScreen />
+      <HomePage />
+
+      {/* <GameScreen /> */}
 
       {/* <main>
         <h1 className={styles.title}>
