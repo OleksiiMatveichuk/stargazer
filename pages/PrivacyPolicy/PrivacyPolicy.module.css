@@ -1,0 +1,9 @@
+.btnBackHome {
+    margin: auto;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #041b52;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

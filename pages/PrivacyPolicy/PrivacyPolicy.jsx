@@ -1,9 +1,12 @@
 import Link from "next/link";
+import style from "./PrivacyPolicy.module.css";
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <Link href="/">Back Home</Link>
+      <Link href="/" className={style.btnBackHome}>
+        Back Home
+      </Link>
     </>
   );
 };
