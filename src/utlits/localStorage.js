@@ -1,4 +1,5 @@
 // Сохранение данных в localStorage
+
 export const addToLocalStorage = (key, data) => {
   try {
     localStorage.setItem(key, JSON.stringify(data));
@@ -8,6 +9,7 @@ export const addToLocalStorage = (key, data) => {
 };
 
 // Получение данных из localStorage
+
 export const getFromLocalStorage = (key) => {
   try {
     const serializedData = localStorage.getItem(key);
