@@ -43,6 +43,7 @@ const Game = () => {
   }, []);
   const handleClick = () => {
     setPoints((prev) => prev + 1);
+    console.log('coordinate', e.target.getBoundingClientRect())
     // addToLocalStorage("myData", points);
   };
   return (
